@@ -1,4 +1,4 @@
-// plz run `npm install async` before, k thanx
+// run `npm install async` before
 
 const fs = require('fs');
 data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
@@ -20,22 +20,16 @@ function parallel() {
   //instant = [];
   
   for (var i = 0; i < capital.length; i++) {
-    instant = data.filter(a => a.word == capital[i]);
+    instant = data.filter(a => a.word === capital[i]);
     //console.log(instant);
     
-    const indexofcapital = wordonly => wordonly == instant[0];
+    const indexofcapital = wordonly => wordonly === instant[0];
     //console.log(data.findIndex(indexofcapital));
 
     print({
       index: (data.findIndex(indexofcapital)) + 1,
       word: instant[0].word,
       delay: 0})
-  }
-
-  for (var i = 0; i < capital.length; i++) {
-
-    data = data.filter(a => a.word != capital[i]);
-  
   }
 
   for (var i = 0; i < data.length; i++) {
