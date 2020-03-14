@@ -1,7 +1,7 @@
 // run `npm install async` before
 
 const fs = require('fs');
-data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
+const data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
 const print = require('./print').print;
 
 const startTime = new Date()
